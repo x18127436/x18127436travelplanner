@@ -1,0 +1,62 @@
+<!-- app/views/travel/search.html.erb -->
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6">
+    <!--LUCAS X PERCENT  
+    <h4>Country: <X= @country['name'] X> 
+      /  Capital: <X= @country['capital'] X> 
+      / Currency: <X= @country['currencies'].join(', ') X> 
+      / Timezone: <X= @country['timezones'].join(', ') X>
+      LUCAS-->
+      
+      </h4>
+      <dl>
+        <dt><dd>
+<button onclick="goBack()">Go Back</button>
+          <br>
+          <br>
+        </dd></dt>
+        <dt><b>Country</b></dt>
+        <dd><%= @country['name'] %></dd>
+
+        <dt><b>Capital</b></dt>
+        <dd><%= @country['capital'] %></dd>
+
+        <dt><b>Currency</b></dt>
+        <dd><%= @country['currencies'].join(', ') %></dd>
+
+        <dt><b>Timezone(s)</b></dt>
+        <dd><%= @country['timezones'].join(', ') %></dd>
+        
+      </dl>
+    </div>
+    <script>
+    function goBack() {
+      window.history.back()
+    }
+    </script>
+
+    <div class="col-lg-12 mt-5">
+        <div>
+          <form action="/covid/index.html">
+              <input type="submit" value="Check Covid Cases Summary" />
+          </form>
+<br>
+          <form action="confirmed.html">
+              <input type="submit" value="Check Covid Confimed Cases" />
+          </form>
+<br>
+          <form action="recovered.html">
+              <input type="submit" value="Check Covid Recovered Cases" />
+          </form>
+<br>
+          <form action="deaths.html">
+              <input type="submit" value="Check Covid Deaths Cases" />
+          </form>
+          
+
+  </div>
+</div>
+
+
+

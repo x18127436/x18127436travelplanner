@@ -1,0 +1,28 @@
+<h1>Deaths Cases:</h1>
+
+<table>
+<thead>
+  <td><b>Country:</b></td>
+  <td><b>State:</b></td>
+  <td><b>Deaths: </b></td>
+  <td><b> Updated_at:</b></td>
+</thead>
+
+<tbody>
+  <% @deaths.each do |deaths| %>
+    <tr>
+      <td><%= deaths['countryRegion']%></td>
+      <td><%= deaths['provinceState']%></td>
+      <td><%= deaths['confirmed']%></td>
+      <td><%= Time.at(deaths['lastUpdate'].to_i/1000).strftime('%d/%m/%Y %H:%M:%S')%></td>
+    </tr>
+
+  <% end %>
+  <button onclick="goBack()">Go Back</button>
+  <script>
+  function goBack() {
+    window.history.back()
+  }
+  </script>
+</tbody>
+</table>

@@ -1,0 +1,29 @@
+<h1>Confirmed Cases:</h1>
+
+<table>
+<thead>
+  <td><b>Country:</b></td>
+  <td><b>State:</b></td>
+  <td><b>Confirmed: </b></td>
+  <td><b> Updated_at:</b></td>
+</thead>
+
+<tbody>
+  <% @confirmed.each do |confirmed| %>
+    <tr>
+      <td><%= confirmed['countryRegion']%></td>
+      <td><%= confirmed['provinceState']%></td>
+      <td><%= confirmed['confirmed']%></td>
+      <td><%= Time.at(confirmed['lastUpdate'].to_i/1000).strftime('%d/%m/%Y %H:%M:%S')%></td>
+    </tr>
+
+  <% end %>
+  <button onclick="goBack()">Go Back</button>
+  <script>
+  function goBack() {
+    window.history.back()
+  }
+  </script>
+</tbody>
+</table>
+

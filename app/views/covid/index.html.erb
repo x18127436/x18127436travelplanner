@@ -1,0 +1,10 @@
+<h1> COVID19 Summary </h1>
+<p>Confirmed: <%= @summary['confirmed']['value']%></p>
+<p>Recovered: <%= @summary['recovered']['value']%></p>
+<p>Deaths: <%= @summary['deaths']['value']%></p>
+<button onclick="goBack()">Go Back</button>
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
